@@ -44,4 +44,10 @@
     scrollbar-width: thin;
     scrollbar-color: rgb(63, 63, 63) transparent;
   }
+
+  .wrapper-glow {
+    box-shadow:
+      -1px 0 10px rgba(99, 102, 241, 0.15),
+      1px 0 10px rgba(99, 102, 241, 0.15);
+  }
 }

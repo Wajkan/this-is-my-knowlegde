@@ -20,9 +20,11 @@ export default function Sidebar() {
 
   return (
     <aside className="flex flex-col px-4 py-6 w-48 sticky top-0 h-screen items-start">
-      <div className="border-b border-white mt-24">
+      <div className="mt-24">
         <h1>Erik</h1>
         <h1>Wiklund</h1>
+        <p>full-stack developer</p>
+        <p>Web2 / Web3</p>
       </div>
       <nav className="flex flex-col gap-2 mt-6">
         <NavLink href="/#welcome" isActive={activeId === 'welcome'}>

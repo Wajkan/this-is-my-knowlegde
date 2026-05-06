@@ -12,8 +12,8 @@ import { ScrollProvider } from '@/context/ScrollContext';
 
 // COMPONENTS
 import Sidebar from '@/components/layout/Sidebar';
-import Footer from '@/components/layout/Footer';
 import ScrollContainer from '@/components/layout/ScrollContainer';
+import ContactsSidebar from '@/components/layout/ContactsSidebar';
 
 // FONTS
 const raleway = Raleway({
@@ -41,9 +41,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <Sidebar />
             <ScrollContainer>
               <main className="flex-1">{children}</main>
-              <Footer />
             </ScrollContainer>
           </ScrollProvider>
+          <ContactsSidebar />
         </div>
       </body>
     </html>

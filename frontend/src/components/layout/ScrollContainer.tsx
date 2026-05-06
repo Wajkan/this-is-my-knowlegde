@@ -9,7 +9,7 @@ export default function ScrollContainer(props: { children: React.ReactNode }) {
   const ref = useScrollContainer();
 
   return (
-    <div ref={ref} className="flex flex-col flex-1 h-full overflow-y-scroll">
+    <div ref={ref} className="flex flex-col flex-1 h-full overflow-y-scroll ">
       {props.children}
     </div>
   );
