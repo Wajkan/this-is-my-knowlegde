@@ -11,7 +11,7 @@ import { useScrollContainer } from '@/hooks/useScrollContainer';
 import NavLink from './NavLink';
 
 // STRING ARRAY OF ACTIVE SECTIONS
-const sections = ['home', 'frontend', 'backend', 'blockchain', 'solidity'];
+const sections = ['welcome', 'frontend', 'backend', 'blockchain', 'solidity'];
 
 export default function Sidebar() {
   const scrollContainerRef = useScrollContainer();
@@ -19,16 +19,14 @@ export default function Sidebar() {
   const activeId = useScrollSpy(sections, scrollContainerRef, options);
 
   return (
-    <aside
-      style={{
-        background:
-          'linear-gradient(90deg, rgba(13, 14, 18, 1) 0%, rgba(21, 24, 30, 1) 100%)',
-      }}
-      className="border-r-2 border-black flex flex-col px-4 py-6 w-48 sticky top-0 h-screen justify-center"
-    >
-      <nav className="flex flex-col gap-2">
-        <NavLink href="/#home" isActive={activeId === 'home'}>
-          Home
+    <aside className="flex flex-col px-4 py-6 w-48 sticky top-0 h-screen items-start">
+      <div className="border-b border-white mt-24">
+        <h1>Erik</h1>
+        <h1>Wiklund</h1>
+      </div>
+      <nav className="flex flex-col gap-2 mt-6">
+        <NavLink href="/#welcome" isActive={activeId === 'welcome'}>
+          Welcome
         </NavLink>
         <NavLink href="/#frontend" isActive={activeId === 'frontend'}>
           Frontend
