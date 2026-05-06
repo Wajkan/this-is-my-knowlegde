@@ -15,7 +15,7 @@ export default function NavLink(props: NavLinkProps) {
   return (
     <Link
       href={props.href}
-      className={`px-3 py-1 text-sm ${
+      className={`px-3 py-1 text-base ${
         props.isActive ? 'font-semibold underline' : 'hover:underline'
       }`}
     >

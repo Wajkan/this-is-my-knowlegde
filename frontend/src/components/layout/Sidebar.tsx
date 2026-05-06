@@ -1,19 +1,31 @@
 'use client';
 
-// COMPONENTS
-import NavLink from './NavLink';
+// REACT
+import { useMemo } from 'react';
 
 // HOOKS
-import { useScrollSpy } from '@/components/hooks/useScrollSpy';
+import { useScrollSpy } from '@/hooks/useScrollSpy';
+import { useScrollContainer } from '@/hooks/useScrollContainer';
+
+// COMPONENTS
+import NavLink from './NavLink';
 
 // STRING ARRAY OF ACTIVE SECTIONS
 const sections = ['home', 'frontend', 'backend', 'blockchain', 'solidity'];
 
 export default function Sidebar() {
-  const activeId = useScrollSpy(sections);
+  const scrollContainerRef = useScrollContainer();
+  const options = useMemo(() => ({ rootMargin: '-40% 0px -60% 0px' }), []);
+  const activeId = useScrollSpy(sections, scrollContainerRef, options);
 
   return (
-    <aside className="border-r-2 border-black flex flex-col px-4 py-6 w-48 sticky top-0 h-screen justify-center">
+    <aside
+      style={{
+        background:
+          'linear-gradient(90deg, rgba(13, 14, 18, 1) 0%, rgba(21, 24, 30, 1) 100%)',
+      }}
+      className="border-r-2 border-black flex flex-col px-4 py-6 w-48 sticky top-0 h-screen justify-center"
+    >
       <nav className="flex flex-col gap-2">
         <NavLink href="/#home" isActive={activeId === 'home'}>
           Home
