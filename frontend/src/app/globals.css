@@ -24,3 +24,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(63, 63, 63) transparent;
+  }
+}

@@ -8,7 +8,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
 // COMPONENTS
-import Header from '@/components/layout/Header';
+import Sidebar from '@/components/layout/Sidebar';
 import Footer from '@/components/layout/Footer';
 
 // FONTS
@@ -35,12 +35,16 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="flex h-screen justify-center overflow-hidden">
+        <div className="flex w-full max-w-[1500px] h-full">
+          <Sidebar />
+          <div className="flex flex-col flex-1 h-full overflow-y-scroll scrollbar-custom">
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
